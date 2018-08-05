@@ -20,7 +20,7 @@ main image
 board
 </td>
 <td>
-register
+<a href="register/register_form.jsp">register</a>
 </td>
 <td>
 login

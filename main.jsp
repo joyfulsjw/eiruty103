@@ -1,10 +1,8 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 
-
-
-
 <%@page import="oracle.jdbc.driver.OracleDriver"%>
 <%@page import="java.sql.*"%>
+
 
 
 
@@ -18,13 +16,11 @@ out.print(pathstr);
 
 
 
-
-
 <%
 try{
 Connection con = null;
 Class.forName("oracle.jdbc.driver.OracleDriver");
-con = DriverManager.getConnection("jdbc:oracle:thin:@//10.250.230.209:1521/orcl","hr","hr");
+con = DriverManager.getConnection("jdbc:oracle:thin:@//192.168.65.131:1521/orcl","hr","hr");
 Statement stmt = null;
 stmt = con.createStatement();
 out.print("DEBUG : db connect ok!");
@@ -32,6 +28,14 @@ out.print("DEBUG : db connect ok!");
 out.print(e);
 }
 %>
+
+
+
+
+
+
+
+
 
 
 
@@ -56,6 +60,9 @@ out.print(e);
 <td colspan="2" rowspan="2">
 <%@ include file="login/login_form.jsp"%>
 and this is ftp test
+<p>
+<p>
+<a href="user_list.jsp">유저 목록 확인</a>
 </td>
 </tr>
 
