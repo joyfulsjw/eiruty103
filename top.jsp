@@ -20,7 +20,24 @@ main image
 board
 </td>
 <td>
-register
+<%
+String ses = null;
+ses = (String)session.getAttribute("id");
+if(ses==null)
+{
+%>
+<a href="register/register_form.jsp">register</a>
+<%
+}
+else
+{
+
+%>
+<a href="register/update_form.jsp">수정</a>
+<%
+}
+%>
+
 </td>
 <td>
 login

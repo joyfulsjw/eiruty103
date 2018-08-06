@@ -1,10 +1,8 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 
-
-
-
 <%@page import="oracle.jdbc.driver.OracleDriver"%>
 <%@page import="java.sql.*"%>
+
 
 
 
@@ -15,8 +13,6 @@ out.print(test);
 String pathstr = request.getContextPath();
 out.print(pathstr);
 %>
-
-
 
 
 
@@ -32,6 +28,13 @@ out.print("DEBUG : db connect ok!");
 out.print(e);
 }
 %>
+
+
+
+
+
+
+
 
 
 
@@ -56,6 +59,26 @@ out.print(e);
 <td colspan="2" rowspan="2">
 <%@ include file="login/login_form.jsp"%>
 and this is ftp test
+<p>
+<p>
+<a href="user_list.jsp">유저 목록 확인</a>
+
+<p>
+<p>
+<%
+
+if(ses==null)
+{
+	out.print("no login session");
+}
+else
+{
+	out.print("session : "+ses);
+}
+
+%>
+
+
 </td>
 </tr>
 
