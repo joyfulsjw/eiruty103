@@ -3,6 +3,8 @@
 <%@page import="java.sql.*"%>
 
 <%
+
+
  Connection con = null;
  Statement stmt = null;  
  ResultSet rs = null;
@@ -87,7 +89,7 @@ pwA
 <p>
 <p>
 <p>
-<input type="submit" value="수정"></input>
+<input type="submit" value="수정" onclick="FCompare()"></input>
 </form>
 
 </body>
@@ -101,11 +103,23 @@ pwA
 
 }catch(Exception e)
 {
-out.println(e);
+e.printStackTrace();
 }
 			
 %>
 
-
+<script>
+function FCompare()
+{
+	if(pw_after_conf == pw_after)
+	{
+		location.href="update_process.jsp";
+	}
+	else
+	{
+		alert("비밀번호 불일치");
+	}
+}
+</script>
 
 

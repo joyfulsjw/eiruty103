@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Context path="/usr/local/src/server/tomcat/webapps/sjh" docBase="sjh" reloadable="true">
+
+        <Resource name="jdbc/myoracle"
+user="hr"
+password="hr"
+auth="Container"
+type="javax.sql.DataSource"
+driverClassName="oracle.jdbc.driver.OracleDriver"
+url="jdbc:oracle:thin:@10.250.230.209:1521:orcl"
+maxActive="20"
+maxIdle="5"
+maxWait="-1" />
+  <ResourceLink name="jdbc/myoracle"
+global="jdbc/myoracle"
+type="javax.sql.DataSource"/>
+
+</Context>

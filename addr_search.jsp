@@ -92,7 +92,7 @@ else
 	
 <%
 out.println(dong+"<p>");
-String DBGsql = "select * from zipcode where dong='"+dong+"'";
+String DBGsql = "select * from zipcode where dong like '%"+dong+"%'";
 
 out.println(DBGsql+"<p>");
 Connection con = null;
@@ -100,6 +100,7 @@ Statement stmt = null;
 ResultSet rs = null;
  
 try{
+
 Class.forName("oracle.jdbc.driver.OracleDriver");
 con = DriverManager.getConnection("jdbc:oracle:thin:@//10.250.230.209:1521/orcl","hr","hr");
 stmt = con.createStatement();
@@ -128,10 +129,14 @@ while(rs.next())
 	out.print("</td>");
 	out.print("</tr>");
 }
-
-}catch(Exception e)
+}
+catch(SQLException e)
 {
-out.println(e);
+	out.print(e);
+}
+catch(Exception e)
+{
+	e.printStackTrace();
 }
 }
 %>

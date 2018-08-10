@@ -22,7 +22,9 @@ board
 <td>
 <%
 String ses = null;
+String ses2 = null;
 ses = (String)session.getAttribute("id");
+ses2 = (String)session.getAttribute("sha");
 if(ses==null)
 {
 %>
@@ -30,17 +32,40 @@ if(ses==null)
 <%
 }
 else
+{	
+if(ses2 != null)
 {
-
 %>
-<a href="register/update_form.jsp">수정</a>
+<a href="register/update_form2.jsp">수정(해시)</a>
 <%
+}
+else{
+	%>
+	<a href="register/update_form.jsp">수정</a>
+<%
+}
 }
 %>
 
 </td>
 <td>
-login
+<%
+if(ses==null)
+{
+%>
+<a href="login/login_form.jsp">로그인</a>
+<p>
+<a href="login/login_form2.jsp">로그인(해시)</a>
+<%
+}
+else
+{
+
+%>
+<a href="login/logout.jsp">로그아웃</a>
+<%
+}
+%>
 </td>
 </tr>
 

@@ -73,12 +73,13 @@ if(ses==null)
 }
 else
 {
-	out.print("session : "+ses);
+	out.print("session : "+ses +"  "+ses2);
 }
 
 %>
 
 
+그리고 이건 sjh 이전 테스트
 </td>
 </tr>
 
